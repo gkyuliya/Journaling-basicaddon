@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journaling</title>
+    <style>
+      body {
+        background: radial-gradient(
+          circle at 10% 20%,
+          #e7c9d6 0%,
+          rgb(243, 242, 229) 90%
+        );
+      }
+      h1 {
+        text-align: center;
+        color: #544d50;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      h2 {
+        text-align: center;
+        color: #544d50;
+        font-size: 25px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      ul {
+        display: inline-block;
+        list-style-position: inside;
+        padding: 0;
+      }
+      li {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #544d50;
+        letter-spacing: 1px;
+        line-height: 23px;
+      }
+      p {
+        text-align: center;
+        color: rgb(146, 172, 146);
+        margin-bottom: 0;
+        text-decoration: underline;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .container {
+        margin: 20px auto;
+        background: #fffbeb;
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+      img {
+        max-width: 100%;
+      }
+      .theme-button {
+        display: block;
+        margin: 0 auto;
+        padding: 8px 10px;
+        letter-spacing: 1px;
+        border-radius: 9px;
+        background: #e7c8eb;
+        color: #544d50;
+        border: 1px solid #544d50;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        font-size: 13px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        transition: all 200ms ease-in-out;
+        opacity: 0.8;
+      }
+      .theme-button:hover {
+        cursor: pointer;
+        color: #e7c8eb;
+        background: #544d50;
+      }
+
+      .learnMore {
+        color: rgb(219, 169, 219);
+        font-size: 17px;
+        transition: all 150ms ease-in-out;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: underline rgb(158, 183, 164);
+      }
+      .learnMore:hover {
+        cursor: pointer;
+        text-decoration: underline plum;
+        color: rgb(158, 183, 164);
+      }
+      footer {
+        text-align: center;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: #544d50;
+      }
+      .pink-journal-pic {
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+        width: 300px;
+      }
+      .pink-journal-pic:hover {
+        transform: scale(1.1);
+        filter: contrast(40%);
+      }
+      .grid {
+        margin: 15px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+      }
+      .grid img {
+        width: 100%;
+        border-radius: 10px;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .dark {
+        color: rgb(156, 146, 146);
+        background: rgb(115, 105, 108);
+        background: linear-gradient(
+          63deg,
+          rgba(115, 105, 108, 1) 27%,
+          rgba(232, 203, 231, 1) 100%
+        );
+      }
+
+      .dark .container {
+        background: #655e61;
+      }
+
+      .dark h1 {
+        color: #e7c8eb;
+      }
+
+      .dark h2 {
+        color: #e7c8eb;
+      }
+
+      .dark .aboutMe {
+        color: #434c44;
+      }
+
+      .dark li {
+        color: #fffbeb;
+      }
+
+      .arrow {
+        text-decoration: none;
+        color: rgb(146, 172, 146);
+        font-size: 14px;
+      }
+      .aboutMe {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: #576c59;
+        text-decoration: none;
+      }
+      .aboutMe:hover {
+        text-decoration: underline;
+      }
+
+      .order {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #e7c9d6;
+        background: #798b7b;
+        border: 1px solid #576c59;
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-size: 18px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition: all 150ms ease-in-out;
+      }
+
+      .order:hover {
+        cursor: pointer;
+        background: #655e61;
+        color: #e7c8eb;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-button">Change theme</button>
+    <div class="container">
+      <h1>Journaling for Mental Health</h1>
+      <h2>
+        One of the ways to deal with any overwhelming emotion is to find a
+        healthy way to express yourself.
+      </h2>
+      <p class="arrow">
+        Journal prompts
+        <br />
+        ↓↓↓
+      </p>
+      <a
+        href="https://emmakatehall.co.uk/self-love-journaling-challenge/"
+        target="_blank"
+        ><img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/066/084/original/finalproject5.png?1675686927"
+          alt=""
+          class="pink-journal-pic"
+        />
+      </a>
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/066/087/original/projectimg3.jpeg?1675691572"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/066/082/original/finalproject3.jpeg?1675686913"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/066/081/original/finalproject2.jpeg?1675686828"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/066/086/original/projectimg1.jpeg?1675691521"
+          alt=""
+        />
+      </div>
+      <p>Journaling can help you:</p>
+      <ul>
+        <li>Manage anxiety</li>
+        <li>Reduce stress</li>
+        <li>Cope with depression</li>
+      </ul>
+      <p>Journaling helps control your symptoms and improve your mood by:</p>
+      <ul>
+        <li>Helping you prioritize problems, fears, and concerns</li>
+        <li>
+          Tracking any symptoms day-to-day so that you can recognize triggers
+          and learn ways to better control them
+        </li>
+        <li>
+          Providing an opportunity for positive self-talk and identifying
+          negative thoughts and behaviors
+        </li>
+      </ul>
+      <a
+        href="https://www.urmc.rochester.edu/encyclopedia/content.aspx?ContentID=4552&ContentTypeID=1"
+        target="_blank"
+        class="learnMore"
+        ><strong>Learn more</strong></a
+      >
+      <br />
+      <br />
+      <button class="order">Order a journal!</button>
+    </div>
+
+    <footer>
+      Coded by
+      <a
+        href="https://www.linkedin.com/in/julia-gabriella-kovacs"
+        target="_blank"
+        class="aboutMe"
+        >Julia Gabriella Kovacs💌</a
+      >
+    </footer>
+
+    <script>
+      function orderJournal() {
+        let name = prompt("What's your name?");
+        let color = prompt("What color do you want your journal to be?");
+        alert(
+          "Your " +
+            color +
+            " journal is on its way!📧" +
+            " " +
+            "Take care of yourself " +
+            name +
+            "!"
+        );
+      }
+
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+
+      let order = document.querySelector(".order");
+      order.addEventListener("click", orderJournal);
+    </script>
+  </body>
+</html>
